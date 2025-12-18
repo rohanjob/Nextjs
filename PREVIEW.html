@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DivineVerse | Immersive Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/11.0.8/framer-motion.umd.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --saffron: #FF9933;
+            --black: #050505;
+            --ash: #B2BEB5;
+        }
+        body {
+            background-color: var(--black);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
+        }
+        .glass-card:hover {
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .parallax-image {
+            transition: transform 0.1s ease-out;
+        }
+        /* Custom Aura */
+        .aura {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            animation: pulse 8s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        .mantra-float {
+            animation: float 10s infinite alternate ease-in-out;
+        }
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Smooth Scroll Container -->
+    <div id="scroll-content">
+        <!-- Hero Section -->
+        <section class="relative h-screen flex flex-col items-center justify-center p-6 text-center overflow-hidden">
+            <div class="aura"></div>
+            <div class="relative z-10">
+                <h1 class="text-6xl md:text-9xl font-bold tracking-widest text-glow mb-4 text-[#D4AF37]">DIVINE VERSE</h1>
+                <p class="text-xl md:text-2xl text-[#B2BEB5] font-light tracking-[0.3em] uppercase mb-12 italic">Eternal Knowledge of Sanatana</p>
+                <div class="flex gap-8 justify-center text-[#FF9933] text-2xl mantra-float">
+                    <span>ॐ</span>
+                    <span>शिवाय नमः</span>
+                    <span>विष्णवे नमः</span>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-10 animate-bounce">
+                <div class="w-6 h-10 border-2 border-[#D4AF37]/30 rounded-full flex justify-center pt-2">
+                    <div class="w-1 h-2 bg-[#D4AF37] rounded-full"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- God Section: Shiva -->
+        <section class="min-h-screen py-32 px-6 md:px-24 flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 space-y-8">
+                <h3 class="text-[#FF9933] tracking-[0.4em] uppercase text-sm">The Destroyer & Transformer</h3>
+                <h2 class="text-5xl md:text-7xl font-bold text-white uppercase">Lord Shiva</h2>
+                <p class="text-[#B2BEB5] text-lg leading-relaxed max-w-xl">
+                    In the silence of the Himalayas, Mahadev resides in eternal meditation. He is the beginning and the end, the stillness and the cosmic dance of Tandava. His presence is the void from which creation springs.
+                </p>
+                <button class="px-10 py-4 border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 tracking-widest uppercase text-sm">Explore Essence</button>
+            </div>
+            <div class="flex-1 relative group">
+                <div class="absolute -inset-4 bg-[#D4AF37]/10 blur-2xl group-hover:bg-[#D4AF37]/20 transition-all duration-700 rounded-full"></div>
+                <img src="frontend/public/images/shiva/meditation.png" alt="Lord Shiva" class="relative rounded-lg shadow-2xl border border-white/5 opacity-80 hover:opacity-100 transition-opacity duration-700 w-full max-w-lg mx-auto">
+            </div>
+        </section>
+
+        <!-- God Section: Vishnu -->
+        <section class="min-h-screen py-32 px-6 md:px-24 flex flex-col md:flex-row-reverse items-center gap-16 bg-[#0a0a0a]">
+            <div class="flex-1 space-y-8">
+                <h3 class="text-[#FF9933] tracking-[0.4em] uppercase text-sm">The Preserver of Dharma</h3>
+                <h2 class="text-5xl md:text-7xl font-bold text-white uppercase">Lord Vishnu</h2>
+                <p class="text-[#B2BEB5] text-lg leading-relaxed max-w-xl">
+                    Resting upon the cosmic serpent Sheshanaga in the milky ocean of Vaikuntha, Lord Vishnu maintains the eternal order. Through His Dashavatara, He restores balance whenever chaos threatens the universe.
+                </p>
+                <button class="px-10 py-4 border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 tracking-widest uppercase text-sm">Divine Darshan</button>
+            </div>
+            <div class="flex-1 relative group">
+                <div class="absolute -inset-4 bg-[#D4AF37]/10 blur-2xl group-hover:bg-[#D4AF37]/20 transition-all duration-700 rounded-full"></div>
+                <img src="frontend/public/images/vishnu/vaikuntha.png" alt="Lord Vishnu" class="relative rounded-lg shadow-2xl border border-white/5 opacity-80 hover:opacity-100 transition-opacity duration-700 w-full max-w-lg mx-auto">
+            </div>
+        </section>
+
+        <!-- Temple Section -->
+        <section class="min-h-screen py-32 px-6 md:px-24 flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 space-y-8">
+                <h3 class="text-[#FF9933] tracking-[0.4em] uppercase text-sm">Sacred Abode</h3>
+                <h2 class="text-5xl md:text-7xl font-bold text-white uppercase">Kedarnath</h2>
+                <p class="text-[#B2BEB5] text-lg leading-relaxed max-w-xl">
+                    High in the Garhwal Himalayas, Kedarnath stands as a beacon of faith. It is one of the twelve Jyotirlingas, where the soul finds tranquility amidst the grand peaks and divine silence.
+                </p>
+                <button class="px-10 py-4 border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 tracking-widest uppercase text-sm">Journey to Peaks</button>
+            </div>
+            <div class="flex-1 relative group">
+                <div class="absolute -inset-4 bg-[#D4AF37]/10 blur-2xl group-hover:bg-[#D4AF37]/20 transition-all duration-700 rounded-full"></div>
+                <img src="frontend/public/images/temples/kedarnath.png" alt="Kedarnath Temple" class="relative rounded-lg shadow-2xl border border-white/5 opacity-80 hover:opacity-100 transition-opacity duration-700 w-full max-w-lg mx-auto">
+            </div>
+        </section>
+
+        <!-- Scriptures Grid -->
+        <section class="py-32 px-6 md:px-24 bg-[#050505]">
+            <h2 class="text-4xl md:text-6xl text-center mb-24 text-[#D4AF37] font-bold tracking-widest uppercase">Sacred Scriptures</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-10 rounded-2xl group">
+                    <h4 class="text-[#FF9933] mb-4 text-xs tracking-widest uppercase">Knowledge</h4>
+                    <h3 class="text-2xl text-white mb-6 group-hover:text-[#D4AF37] transition-colors">Rig Veda</h3>
+                    <p class="text-[#B2BEB5]/70 text-sm leading-relaxed">The primal fountainhead of Vedic knowledge, containing cosmic hymns and ancient wisdom.</p>
+                </div>
+                <div class="glass-card p-10 rounded-2xl group">
+                    <h4 class="text-[#FF9933] mb-4 text-xs tracking-widest uppercase">Melody</h4>
+                    <h3 class="text-2xl text-white mb-6 group-hover:text-[#D4AF37] transition-colors">Sama Veda</h3>
+                    <p class="text-[#B2BEB5]/70 text-sm leading-relaxed">The Veda of chants and music, transmuting knowledge into spiritual vibration.</p>
+                </div>
+                <div class="glass-card p-10 rounded-2xl group">
+                    <h4 class="text-[#FF9933] mb-4 text-xs tracking-widest uppercase">Ritual</h4>
+                    <h3 class="text-2xl text-white mb-6 group-hover:text-[#D4AF37] transition-colors">Yajur Veda</h3>
+                    <p class="text-[#B2BEB5]/70 text-sm leading-relaxed">The manual for sacred ceremonies, bridging the physical and metaphysical realms.</p>
+                </div>
+                <div class="glass-card p-10 rounded-2xl group">
+                    <h4 class="text-[#FF9933] mb-4 text-xs tracking-widest uppercase">Philosophy</h4>
+                    <h3 class="text-2xl text-white mb-6 group-hover:text-[#D4AF37] transition-colors">Atharva Veda</h3>
+                    <p class="text-[#B2BEB5]/70 text-sm leading-relaxed">Daily life practices and metaphysical protections for the seeker of truth.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-24 text-center border-t border-white/5 bg-black">
+            <div class="mb-8 opacity-30 tracking-[1em] text-xs text-[#D4AF37]">SANATANA DHARMA</div>
+            <p class="text-[#B2BEB5]/40 text-sm">© 2025 DivineVerse | Immersive Devotional Experience</p>
+            <div class="mt-12 flex justify-center gap-8 text-[#D4AF37]/20">
+                <span>ૐ</span>
+                <span>卐</span>
+                <span>ૐ</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize Lenis Smooth Scroll
+        const lenis = new Lenis()
+
+        function raf(time) {
+          lenis.raf(time)
+          requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+        // Basic Scroll reveal logic
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
